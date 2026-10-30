@@ -80,7 +80,7 @@ if ! out=$(gh api graphql \
   echo "| image=$ICON"
   echo "---"
   echo "gh failed | color=red"
-  while IFS= read -r line; do echo "$line | font=Menlo size=11 trefresh=false"; done <<<"$out"
+  while IFS= read -r line; do echo "${line//|/¦} | font=Menlo size=11 trim=false"; done <<<"$out"
   exit 0
 fi
 
